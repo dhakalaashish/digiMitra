@@ -1,0 +1,306 @@
+/* importing fonts */
+/* black han sans---for digimitra */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+/* roboto -- headers in english */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/* jua font for links*/
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+
+/* Declaring Variables */
+:root {
+    /* dark shades of primary color */
+--clr-primary-1: hsl(205, 86%, 17%);
+--clr-primary-2: hsl(205, 77%, 27%);
+--clr-primary-3: hsl(205, 72%, 37%);
+--clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+--clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+--clr-primary-6: hsl(205, 89%, 70%);
+--clr-primary-7: hsl(205, 90%, 76%);
+--clr-primary-8: hsl(205, 86%, 81%);
+--clr-primary-9: hsl(205, 90%, 88%);
+--clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+--clr-grey-1: hsl(209, 61%, 16%);
+--clr-grey-2: hsl(211, 39%, 23%);
+--clr-grey-3: hsl(209, 34%, 30%);
+--clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+--clr-grey-5: hsl(210, 22%, 49%);
+--clr-grey-6: hsl(209, 23%, 60%);
+--clr-grey-7: hsl(211, 27%, 70%);
+--clr-grey-8: hsl(210, 31%, 80%);
+--clr-grey-9: hsl(212, 33%, 89%);
+--clr-grey-10: hsl(210, 36%, 96%);
+--clr-white: #fff;
+--clr-red-dark: hsl(360, 67%, 44%);
+--clr-red-light: hsl(360, 71%, 66%);
+--clr-green-dark: hsl(125, 67%, 44%);
+--clr-green-light: hsl(125, 71%, 66%);
+--clr-black: #222;
+    /*Other Variables*/
+--ff-primary:"Roboto", sans-serif;
+--ff-secondary: "Open Sans", sans-serif;
+--transition: all 0.3s linear;
+--spacing: 0.1rem;
+--radius: 0.25rem;
+--light-shadow: 0 5px 15px rgba(0,0,0,0.1);
+--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+--max-width: 1170px;
+--fixed-width: 620px;
+}
+
+*,
+::before,
+::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+ul{
+    list-style-type:none;
+}
+a{
+    text-decoration: none;
+    color: var(--clr-primary-2);
+    /* color:var(--clr-grey-3); */
+}
+h1,
+h2,
+h3,
+h4{
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    line-height:1.25;
+    margin-bottom: 0.75rem;
+}
+h1{
+    font-size: 3rem;
+    font-family: 'Black Han Sans', sans-serif;
+    color: var(--clr-primary-2);
+}
+h2{
+    font-size:2rem;
+}
+h3{
+    font-size:1.25rem;
+}
+h4{
+    font-size: 0.875rem;
+}
+p{
+    margin-bottom: 1.25rem;
+    color: var(--clr-grey-5);
+}
+
+@media screen and (min-width: 1010px){
+    h1{
+        font-size: 3.5rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+    h3{
+        font-size: 1.75rem;
+    }
+    h4{
+        font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4{
+        line-height:1;
+    }
+}
+/* header */
+.hero-img{
+    width:100%;
+    background:  url(./images/hero-image.jpg) center/cover
+    no-repeat;
+    height: 100vh;
+    /* linear-gradient(rgba(63,208,212,0.5),rgba(0,0,0,0.7)), */
+    position:relative;
+}
+.nav{
+    width:100%;
+    box-shadow: var(--dark-shadow);
+    background: white;
+}
+.sticky-nav{
+    position:fixed;
+    top:0;
+    left:0;
+    background:white;
+    box-shadow: var(--dark-shadow);
+    z-index:100;
+}
+.nav-center{
+    display:flex;
+    justify-content:space-between;
+    background-color: white;
+    height:5rem;
+    padding: 10px 10px;
+    margin: 0 auto;
+    max-width: 822px;
+    
+}
+.nav-toggle{
+    font-size:2.5rem;
+    cursor: pointer;
+    color: var(--clr-primary-5);
+}
+.links{
+    background-color:white;
+    height:0;
+    overflow:hidden;
+    transition: var(--transition);
+}
+.show-links{
+    height:224px;
+}
+.links li{
+    font-size: 1.5rem;
+    font-family: 'Jua', sans-serif;
+    /* font-family: var(--ff-primary); */
+    line-height:3.5rem;
+}
+.links li:hover{
+    background-color: var(--clr-primary-7);
+}
+.links li a{
+    text-transform: uppercase;
+    width:100vw;
+    padding-left: 10px;
+    transition:var(--transition);
+}
+.links li a:hover{
+    padding-left:15px;
+    color: var(--clr-black);
+}
+
+@media screen and (min-width:1010px){
+    .nav{
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        background: transparent;
+        box-shadow: none;
+    }
+    .sticky-nav{
+        position:fixed;
+        top:0;
+        left:0;
+        background:white;
+        box-shadow: var(--dark-shadow);
+        z-index:100;
+    }
+    .nav-toggle{
+        display:none;
+    }
+    .nav-center{
+        background: transparent;
+        display:block;
+        height:5rem;
+        padding: 10px 10px;
+        margin: 0;
+        max-width: 822px;
+    }
+    .links{
+        height:auto;
+        display:flex;
+        place-items:center;
+        background-color:transparent;
+        /* height:5rem; */
+        transition: var(--transition);
+    }
+    .links li{
+        font-size: 1.5rem;
+        line-height:1rem;
+        padding-top: 6.5px;
+    }
+    .links li:hover{
+        background-color: transparent;
+    }
+    .links li a{
+        padding: 0 10px;
+        transition:var(--transition);
+        color: var(--clr-grey-3);
+    }
+    .links li a:hover{
+        padding:0 10px;
+        color: var(--clr-black);
+    }
+}
+
+/* articles */
+
+.article-header{
+    display:flex;
+    justify-content: space-between;
+    height:90vh;
+    width:95vw;
+}
+.left-side-header{
+    /* position:absolute;
+    top:40vh;
+    left:5vw;
+    color:white;
+    background:transparent;
+    padding:10px;
+    border-radius:var(--radius);
+    font-size:3rem;  */
+    visibility:hidden; 
+}
+.right-side-header{
+    position:absolute;
+    top:50vh;
+    right:1vw;
+    min-width:40vw;
+    background-color:var(--clr-grey-9);
+    opacity: 0.7;
+    padding:10px;
+    border-radius:var(--radius);
+    font-size: 1.25rem;
+    line-height:2.5rem;
+    box-shadow: var(--light-shadow);
+}
+.right-side-header li{
+    color:black;
+    padding: 5px 0;
+}
+
+/* articles */
+article{
+    min-height:90vh;
+    display:flex;
+    justify-content: space-between;
+    position:relative;
+    margin: 10px auto;
+}
+article .left-side{
+    max-width: 25vw;
+    height:auto;
+    background: transparent;
+    padding:2vw;
+    margin-top:20vh;
+    border-radius:var(--radius);
+}
+article .right-side{
+    width:65vw;
+    height:auto;
+    background:white;
+    box-shadow: var(--light-shadow);
+    padding:1vw;
+    margin-right:1vw;
+    border-radius:var(--radius);
+}
+
